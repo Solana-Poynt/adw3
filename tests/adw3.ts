@@ -29,19 +29,11 @@ function loadKeypair(path: string): Keypair {
 
 describe("poynt-adw3", () => {
   // Configure the client to use the base layer cluster
-  const connection = new Connection(
-    "https://devnet.helius-rpc.com/?api-key=4a2f7893-25a4-4014-a367-4f2fac75aa63",
-    { commitment: "confirmed" }
-  );
 
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
   // Create a wallet using the default keypair
   const wallet = anchor.Wallet.local();
-
-  // Create a provider for the base layer
-  const provider = new anchor.AnchorProvider(connection, wallet, {
-    commitment: "confirmed",
-  });
-
   // Set this provider as the global provider for Anchor
   anchor.setProvider(provider);
 
