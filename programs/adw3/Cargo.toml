@@ -1,0 +1,29 @@
+[package]
+name = "adw3"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "adw3"
+
+[features]
+default = []
+custom-heap = []
+anchor-debug = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+
+[dependencies]
+
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+hex = "0.4.3" 
+anchor-spl = "0.31.1"
+ephemeral-rollups-sdk = { version = "0.2.5", features = ["anchor"] }
+
+
